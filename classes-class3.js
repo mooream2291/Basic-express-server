@@ -154,18 +154,19 @@ class BananaModel {
 }
 
 function getOneBanana(req, res) {
-    const id = request.params.id;
+    const id = req.params.id;
     const oneBanana = bananas.get(id);
     res.status(200).json(oneBanana);
 }
 
 function createBanana(req, res) {
-    const obj = request.body;
+    const obj = req.body;
     const newBanana = bananas.create(obj)//this object comes from the request, specifically the body
     res.status(200).json(newBanana);
 }
 
 function deleteBanana(req, res) {
+    const getId = req.params.id
     res.status(200).send('deleting banana');
 }
 
